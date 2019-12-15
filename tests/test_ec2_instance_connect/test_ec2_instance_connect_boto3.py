@@ -12,10 +12,21 @@ example
 @mock_ec2_instance_connect
 def test_send_ssh_public_key():
     client = boto3.client("ec2-instance-connect")
+    fake_response = {
+        "RequestId": "example-2a47-4c91-9700-e37e85162cb6",
+        "Success": True,
+        "ResponseMetadata": {
+            "HTTPStatusCode": 200,
+            "HTTPHeaders": {"server": "amazon.com"},
+            "RetryAttempts": 0,
+        },
+    }
 
-    client.send_ssh_public_key(
+    response = client.send_ssh_public_key(
         InstanceId="i-abcdefg12345",
         InstanceOSUser="ec2-user",
         SSHPublicKey=pubkey,
         AvailabilityZone="us-east-1",
     )
+
+    assert response == fake_response
