@@ -25,7 +25,7 @@ def test_send_ssh_public_key():
         InstanceId="i-abcdefg12345",
         InstanceOSUser="ec2-user",
         SSHPublicKey=pubkey,
-        AvailabilityZone="us-east-1",
+        AvailabilityZone="us-east-1a",
     )
 
     assert response == fake_response
