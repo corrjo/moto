@@ -3,7 +3,6 @@ from moto.core import BaseBackend, BaseModel
 
 
 class FakeEc2InstanceConnect(BaseModel):
-
     def __init__(self):
         pass
 

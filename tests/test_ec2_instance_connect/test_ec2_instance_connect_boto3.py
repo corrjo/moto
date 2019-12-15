@@ -1,5 +1,5 @@
 import boto3
-import sure # noqa
+import sure  # noqa
 
 from moto import mock_ec2_instance_connect
 
@@ -11,11 +11,11 @@ example
 
 @mock_ec2_instance_connect
 def test_send_ssh_public_key():
-    client = boto3.client('ec2-instance-connect')
+    client = boto3.client("ec2-instance-connect")
 
     client.send_ssh_public_key(
-        InstanceId='i-abcdefg12345',
-        InstanceOSUser='ec2-user',
+        InstanceId="i-abcdefg12345",
+        InstanceOSUser="ec2-user",
         SSHPublicKey=pubkey,
-        AvailabilityZone='us-east-1'
+        AvailabilityZone="us-east-1",
     )
