@@ -1,15 +1,9 @@
 import boto
-from moto.core import BaseBackend, BaseModel
-
-
-class FakeEc2InstanceConnect(BaseModel):
-    def __init__(self):
-        pass
+from moto.core import BaseBackend
 
 
 class Ec2InstanceConnectBackend(BaseBackend):
-    def __init__(self, region=None):
-        self.region = region
+    pass
 
 
 ec2_instance_connect_backends = {}
