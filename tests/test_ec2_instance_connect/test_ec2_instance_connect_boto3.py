@@ -10,7 +10,7 @@ example
 
 @mock_ec2_instance_connect
 def test_send_ssh_public_key():
-    client = boto3.client("ec2-instance-connect")
+    client = boto3.client("ec2-instance-connect", region_name="us-east-1")
     fake_response = {
         "RequestId": "example-2a47-4c91-9700-e37e85162cb6",
         "Success": True,
