@@ -1,5 +1,4 @@
 import boto3
-import sure  # noqa
 
 from moto import mock_ec2_instance_connect
 
