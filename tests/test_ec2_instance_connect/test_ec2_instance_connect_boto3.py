@@ -11,15 +11,7 @@ example
 @mock_ec2_instance_connect
 def test_send_ssh_public_key():
     client = boto3.client("ec2-instance-connect", region_name="us-east-1")
-    fake_response = {
-        "RequestId": "example-2a47-4c91-9700-e37e85162cb6",
-        "Success": True,
-        "ResponseMetadata": {
-            "HTTPStatusCode": 200,
-            "HTTPHeaders": {"server": "amazon.com"},
-            "RetryAttempts": 0,
-        },
-    }
+    fake_request_id = "example-2a47-4c91-9700-e37e85162cb6"
 
     response = client.send_ssh_public_key(
         InstanceId="i-abcdefg12345",
@@ -28,4 +20,4 @@ def test_send_ssh_public_key():
         AvailabilityZone="us-east-1a",
     )
 
-    assert response == fake_response
+    assert response["RequestId"] == fake_request_id
