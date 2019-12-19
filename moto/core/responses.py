@@ -194,6 +194,7 @@ class BaseResponse(_TemplateEnvironmentMixin, ActionAuthenticatorMixin):
 
     @classmethod
     def dispatch(cls, *args, **kwargs):
+        from nose.tools import set_trace; set_trace()
         return cls()._dispatch(*args, **kwargs)
 
     def setup_class(self, request, full_url, headers):
