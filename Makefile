@@ -19,13 +19,13 @@ lint:
 test-only:
 	rm -f .coverage
 	rm -rf cover
-	@nosetests -s ./tests/test_ec2_instance_connect/ $(TEST_EXCLUDE)
+	@nosetests -sv ./tests/test_ec2_instance_connect/ $(TEST_EXCLUDE)
 
 
 test: lint test-only
 
 test_server:
-	@TEST_SERVER_MODE=true nosetests -s  --with-coverage --cover-html ./tests/test_ec2_instance_connect/
+	@TEST_SERVER_MODE=true nosetests -sv  --with-coverage --cover-html ./tests/test_ec2_instance_connect/
 
 aws_managed_policies:
 	scripts/update_managed_policies.py
