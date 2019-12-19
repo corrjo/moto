@@ -38,6 +38,7 @@ install:
 before_script:
 - if [[ $TRAVIS_PYTHON_VERSION == "3.7" ]]; then make lint; fi
 script:
+- ls -al moto/ec2*
 - make test-only
 after_success:
 - coveralls
